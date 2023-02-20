@@ -1,0 +1,17 @@
+{
+  "name": "exex-trading-platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "install:front": "cd ./frontend && yarn",
+    "install:back": "cd ./backend && yarn",
+    "install:all": "yarn && yarn install:front && yarn install:back",
+    "start:front": "cd ./frontend && yarn start",
+    "start:back": "cd ./backend && yarn start",
+    "start": "concurrently --names \"FRONT,BACK\" -c \"auto\" \"yarn start:front\" \"yarn start:back\""
+  },
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
