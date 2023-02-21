@@ -2,7 +2,11 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
-const { PureFI } = require('@purefi/verifier-sdk');
+const { 
+  PureFI,
+  PureFIErrorCodes,
+  PureFIError
+ } = require('@purefi/verifier-sdk');
 
 dotenv.config({
   path: '../.env',
@@ -44,7 +48,17 @@ app.post('/verify/rule', async (req, res) => {
     const data = await PureFI.verifyRule(payload, purefiApiKey);
     return res.send(data);
   } catch(err) {
-    return res.status(400).send(err);
+    switch (err.code) {
+      case PureFIErrorCodes.VALIDATION: {
+        return res.status(400).send(err.message);
+      }
+      case PureFIErrorCodes.FORBIDDEN: {
+        return res.status(403).send(err.message);
+      }
+      default: {
+        return res.status(400).send(err);
+      }
+    }
   }
 })
 

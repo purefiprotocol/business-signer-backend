@@ -156,15 +156,14 @@ const TheForm = () => {
       });
 
       if(response.ok) {
-        console.log('response', response);
         setError('');
         const res = await response.text();
         setResponseData(res);
       } else {
-        const error = await response.json();
+        const error = await response.text();
 
         setResponseData();
-        setError(error.message);
+        setError(error);
       }
     } catch (error) {
       setResponseData();

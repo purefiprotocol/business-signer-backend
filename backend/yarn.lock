@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@purefi/verifier-sdk@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@purefi/verifier-sdk/-/verifier-sdk-5.0.0.tgz#4de57db2d159d1eaf9c62d5afe3d07c83167e7a3"
-  integrity sha512-2WXlhZPHDLm7F+g6xBUagYYElQJMJ+KTIQe/vibrl3wzNt5Dng+OJUjehmfBwoVJXYXwjYXPyjrEfYhHrZX8eQ==
+"@purefi/verifier-sdk@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@purefi/verifier-sdk/-/verifier-sdk-5.0.1.tgz#16cc5fdd6851fe709ef8f5f118de01fcab95e4fd"
+  integrity sha512-MYc6vejz3uvbb1lXdlslu6LgOH0ZspQX4YXSSrBuogkrvRibUzg8C1LJHG8bdQph7nB4TYZwuniJn7Txby+1Bg==
   dependencies:
     axios "^0.22.0"
     eth-rpc-errors "^4.0.3"
